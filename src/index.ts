@@ -60,7 +60,9 @@ export class RCTMSSpeech {
     });
   }
   setKeyAndRegion(key, region) {
-    MSSpeech.setKeyAndRegion(key, region);
+    if (MSSpeech) {
+      MSSpeech.setKeyAndRegion(key, region);
+    }
   }
   start(locale, options = {}) {
     if (!this._loaded && !this._listeners && voiceEmitter !== null) {
