@@ -84,7 +84,7 @@ export class RCTMSSpeech {
           REQUEST_PERMISSIONS_AUTO: true,
         }, options), callback);
       } else {
-        MSSpeech.startSpeech(callback);
+        // MSSpeech.startSpeech(callback);
       }
     });
   }
