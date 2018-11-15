@@ -8,7 +8,7 @@ import {
 const { MSSpeech } = NativeModules;
 
 // NativeEventEmitter is only availabe on React Native platforms, so this conditional is used to avoid import conflicts in the browser/server
-const voiceEmitter = Platform.OS !== "web" ? new NativeEventEmitter(MSSpeech) : null;
+const voiceEmitter = (Platform.OS !== "web" && MSSpeech) ? new NativeEventEmitter(MSSpeech) : null;
 
 export class RCTMSSpeech {
   private _loaded: boolean;
